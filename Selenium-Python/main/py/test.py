@@ -45,7 +45,8 @@ driver = webdriver.Remote(
 driver.maximize_window()
 driver.set_page_load_timeout(20000)
 driver.get("https://www.lambdatest.com/selenium-playground")
-
+time.sleep(4)
+driver.find_element(By.XPATH, "//button[text()='Allow all']").click()
 driver.find_element(By.XPATH, "//a[normalize-space()='Simple Form Demo']").click()
 url = driver.current_url
 print(str(url))
